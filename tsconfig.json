@@ -1,8 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "**/*", "src/projects/_template.mdx"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "strictNullChecks": true, // add if using `base` template
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -10,6 +11,6 @@
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
-    }
+    },
   }
 }

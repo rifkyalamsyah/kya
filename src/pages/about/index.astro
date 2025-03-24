@@ -1,0 +1,133 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Button } from '@/components/starwind/button';
+
+const data = {
+  title: 'About Me',
+  desc: 'リフキ',
+  cta: 'Back',
+};
+
+// about me
+const a = {
+  name: 'Rifky Alamsyah',
+  desc: 'UI Designer & Front-End Web Developer, based in Indonesia 🇮🇩',
+  text: 'Resume',
+  resumeUrl: 'https://read.cv/rifkyalamsyah',
+  textTwo: 'Links',
+  linkBio: 'https://zaap.bio/rifkyalamsyah',
+};
+
+// links cards
+const links = [
+  {
+    title: 'Projects',
+    desc: 'Discover my portfolio.',
+    textBtn: 'See Portfolio',
+    url: '/project',
+  },
+  {
+    title: 'Shop',
+    desc: 'Check out 3D Icons / Illustrations.',
+    textBtn: 'Discover',
+    url: 'http://rifky.gumroad.com/',
+  },
+  {
+    title: 'Blog',
+    desc: 'Read my insightful articles.',
+    textBtn: 'Read Article',
+    url: '/blog',
+  },
+];
+---
+
+<Layout>
+  <main class='mt-auto'>
+    <section id='About' class='py-24'>
+      <div class='container mx-auto'>
+        <Button size='sm' variant='outline' href='/' class='mt-2'>{data.cta}</Button>
+        <div class='mb-8 flex flex-col items-center justify-center gap-2'>
+          <h1 class='text-center text-3xl sm:text-6xl font-light'>
+            {data.title}
+          </h1>
+          <p
+            class='text-center text-xl text-slate-500 dark:text-slate-300'
+          >
+            {data.desc}
+          </p>
+        </div>
+        <div class='grid grid-cols-3 grid-rows-2 gap-4'>
+          <div class='col-span-2 p-6 border border-gray-200 rounded-lg'>
+            <h2 class='text-xl'>{a.name}</h2>
+            <p class='font-light text-lg text-slate-500 dark:text-slate-300'>
+              {a.desc}
+            </p>
+            <Button size='sm' href={a.resumeUrl} class='mt-2' target='_blank'
+              >{a.text}</Button
+            >
+            <Button
+              variant='outline'
+              size='sm'
+              href={a.linkBio}
+              class='mt-2'
+              target='_blank'>{a.textTwo}</Button
+            >
+          </div>
+          <div
+            class='col-start-3 p-6 border border-gray-200 rounded-lg flex flex-col justify-end gap-2'
+          >
+            <h2 class='text-xl'>Social Media</h2>
+            <div>
+              <Button
+                size='sm'
+                href='https://x.com/kya_dev'
+                class='mt-2'
+                target='_blank'>X</Button
+              >
+              <Button
+                size='sm'
+                href='https://instagram.com/kya.devs'
+                class='mt-2'
+                target='_blank'>IG</Button
+              >
+              <Button
+                variant='outline'
+                size='sm'
+                href='https://threads.net/@kya.devs'
+                class='mt-2'
+                target='_blank'>Threads</Button
+              >
+            </div>
+          </div>
+          <div class='row-start-2 p-6 border border-gray-200 rounded-lg'>
+            <h2 class='text-xl'>{links[0].title}</h2>
+            <p class='font-light text-slate-500 dark:text-slate-300'>
+              {links[0].desc}
+            </p>
+            <Button size='sm' href={links[0].url} class='mt-2'
+              >{links[0].textBtn}</Button
+            >
+          </div>
+          <div class='row-start-2 p-6 border border-gray-200 rounded-lg'>
+            <h2 class='text-xl'>{links[1].title}</h2>
+            <p class='font-light text-slate-500 dark:text-slate-300'>
+              {links[1].desc}
+            </p>
+            <Button size='sm' href={links[1].url} class='mt-2' target='_blank'
+              >{links[1].textBtn}</Button
+            >
+          </div>
+          <div class='row-start-2 p-6 border border-gray-200 rounded-lg'>
+            <h2 class='text-xl'>{links[2].title}</h2>
+            <p class='font-light text-slate-500 dark:text-slate-300'>
+              {links[2].desc}
+            </p>
+            <Button size='sm' href={links[2].url} class='mt-2'
+              >{links[2].textBtn}</Button
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

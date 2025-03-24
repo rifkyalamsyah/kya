@@ -1,0 +1,105 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Button } from '@/components/starwind/button';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/starwind/tabs";
+
+// content collections
+import { getCollection } from "astro:content";
+// get all projects and sort by pubDate
+const posts = (await getCollection('projects')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const data = {
+  subtitle: 'Projects',
+  title: '🔮 Crafting Digital Experiences That Convert ✨',
+  desc: "Websites that drive business growth. UI/UX, front-end dev, WordPress & modern frameworks. Let's elevate your online presence.",
+  cta: 'Back',
+};
+---
+
+<Layout>
+  <main class='mt-auto'>
+    <section id='hero' class='py-24'>
+      <div class='container mx-auto'>
+        <Button size='sm' variant='outline' href='/about' class='mt-2'>{data.cta}</Button>
+        <div class='flex flex-col items-center justify-center gap-2'>
+          <h1 class='text-center text-xl text-slate-600'>{data.subtitle}</h1>
+          <h2 class=' lg:max-w-[800px] text-center text-3xl sm:text-6xl font-light'>
+            {data.title}
+          </h2>
+          <p class='lg:max-w-[800px] text-center text-xl font-light text-slate-500 dark:text-slate-300'>{data.desc}</p>
+        </div>
+
+        <Tabs defaultValue="all" class="w-full mx-auto mt-12">
+          <TabsList>
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="frontend">Front-End</TabsTrigger>
+            <TabsTrigger value="wordpress">WordPress</TabsTrigger>
+            <TabsTrigger value="webflow">Webflow</TabsTrigger>
+          </TabsList>
+          <TabsContent value="all">
+            <div class='mt-8 flex flex-row flex-wrap justify-between gap-6'>
+              {
+                posts.map((post) => (
+                  <div class='lg:w-[49%] p-6 flex flex-col justify-center gap-2 border border-gray-200 rounded-lg'>
+                    <a href={`/project/${post.id}`}>
+                      <img src={post.data.image} alt={post.data.title} class='rounded-lg' width={720} height={360} loading='eager' />
+                    </a>
+                    <h3 class="text-2xl">{post.data.sortTitle}</h3>
+                    <p class="font-light line-clamp-2 text-slate-600">{post.data.desc}</p>
+                    <div class="flex gap-2">
+                    <Button size='sm' href={`/project/${post.id}`}>Read More</Button>
+                    <Button variant='outline' size='sm' href={post.data.siteLink} target={'_blank'}>Visit Site</Button>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </TabsContent>
+          <TabsContent value="frontend">
+            <div class='mt-8 flex flex-row flex-wrap justify-between gap-6'>
+              {posts.filter(post => post.data.category === 'Frontend').map((post) => (
+                <div class='lg:w-[49%] p-6 flex flex-col justify-center gap-2 border border-gray-200 rounded-lg'>
+                  <a href={`/project/${post.id}`}>
+                    <img src={post.data.image} alt={post.data.title} class='rounded-lg' width={720} height={360} loading='eager' />
+                  </a>
+                  <h3 class="text-2xl">{post.data.sortTitle}</h3>
+                  <p class="font-light line-clamp-2 text-slate-600">{post.data.desc}</p>
+                  <div class="flex gap-2">
+                    <Button size='sm' href={`/project/${post.id}`}>Read More</Button>
+                    <Button variant='outline' size='sm' href={post.data.siteLink} target={'_blank'}>Visit Site</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="wordpress">
+            <div class='mt-8 flex flex-row flex-wrap justify-between gap-6'>
+              {posts.filter(post => post.data.category === 'WordPress').map((post) => (
+                <div class='lg:w-[49%] p-6 flex flex-col justify-center gap-2 border border-gray-200 rounded-lg'>
+                  <a href={`/project/${post.id}`}>
+                    <img src={post.data.image} alt={post.data.title} class='rounded-lg' width={720} height={360} loading='eager' />
+                  </a>
+                  <h3 class="text-2xl">{post.data.sortTitle}</h3>
+                  <p class="font-light line-clamp-2 text-slate-600">{post.data.desc}</p>
+                  <div class="flex gap-2">
+                    <Button size='sm' href={`/project/${post.id}`}>Read More</Button>
+                    <Button variant='outline' size='sm' href={post.data.siteLink} target={'_blank'}>Visit Site</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="webflow">
+            <p class='py-8 text-center text-xl'>Coming soon...</p>
+          </TabsContent>
+        </Tabs>
+
+        <div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
