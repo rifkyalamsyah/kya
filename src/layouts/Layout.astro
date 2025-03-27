@@ -2,6 +2,7 @@
 import '@styles/tailwind.css';
 import '@styles/starwind.css';
 import '@fontsource-variable/outfit';
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -12,6 +13,7 @@ import '@fontsource-variable/outfit';
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>Rifky Alamsyah</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />

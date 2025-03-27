@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { Button } from '@/components/starwind/button';
+import { Icon } from 'astro-icon/components';
 
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { render } from 'astro:content';
@@ -23,9 +24,9 @@ const { Content } = await render(post);
   <main>
     <div class='container mx-auto py-24'>
       <div>
-        <Button size='sm' variant='outline' href='/project' class='mt-2'>Back</Button>
+        <Button size='sm' variant='outline' href='/project' class='mt-2'><Icon name='arrow-left' /> Back</Button>
       </div>
-      <article class="mx-auto prose prose-slate prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg">
+      <article class="mx-auto prose prose-slate prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg prose-ol:my-4 prose-ul:my-4 prose-li:text-lg prose-li:font-light prose-hr:my-8 prose-figcaption:text-base">
         <h1>{post.data.title}</h1>
         <p>{post.data.desc}</p>
         <Button size='sm'  href={post.data.siteLink} class='mt-2 text-center' target='_blank'>Visit Website</Button>

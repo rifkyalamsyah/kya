@@ -13,6 +13,10 @@ pubDate: 2024-11-29
 updatedDate: 2025-03-23
 ---
 
+import { Picture } from 'astro:assets';
+import landingPage from 'public/img/p/chirocare/desktop-chirocare.jpg';
+import styleGuide from 'public/img/p/chirocare/desktop-chirocare-style-guide.jpg';
+
 **Client:** Djavaweb
 
 **Year:** {frontmatter.year}
@@ -20,3 +24,49 @@ updatedDate: 2025-03-23
 **Scope:** {frontmatter.services}
 
 ---
+
+
+## Overview
+
+    ChiroCare is a WordPress development project designed to create an informative and approachable website for a chiropractic clinic. The goal was to design an Elementor template kit that emphasizes the clinic's services, builds trust with potential patients, and makes appointment scheduling effortless. The design focused on creating a clean, welcoming, and professional user experience to reflect the clinic's dedication to holistic care and wellness.
+
+---
+
+### Teams
+
+    - Faiz Hakim - _Project Manager_
+    - Hendy Riswanto - _QA Engineer_
+    - Rifky Alamsyah - _Web designer_
+    - Yana Setiawan - _Web designer_
+
+### Tech Stack & Tools
+
+    - Wordpress
+    - Elementor
+    - Figma
+
+---
+
+### Outcome
+
+<figure>
+  <Picture
+    src={landingPage}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Landing Page - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture
+    src={styleGuide}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Style Guide - {frontmatter.name}
+  </figcaption>
+</figure>

@@ -21,10 +21,128 @@ updatedDate: 2025-03-23
 
 ---
 
-import { Picture } from 'astro:assets';
-import hifiOne from 'public/img/p/wadda/desktop-wadda-1.jpg';
 
-### Outcome
+import { Picture } from 'astro:assets';
+import sitemap from 'public/img/p/wadda/sitemap-wadda.jpg';
+import userflow from 'public/img/p/wadda/userflow-wadda.jpg';
+import wOne from 'public/img/p/wadda/wireframe-wadda-1.jpg';
+import wTwo from 'public/img/p/wadda/wireframe-wadda-2.jpg';
+import wThree from 'public/img/p/wadda/wireframe-wadda-3.jpg';
+import wFour from 'public/img/p/wadda/wireframe-wadda-4.jpg';
+import wFive from 'public/img/p/wadda/wireframe-wadda-5.jpg';
+import hifiOne from 'public/img/p/wadda/desktop-wadda-1.jpg';
+import hifiTwo from 'public/img/p/wadda/desktop-wadda-2.jpg';
+import hifiThree from 'public/img/p/wadda/desktop-wadda-3.jpg';
+import hifiFour from 'public/img/p/wadda/desktop-wadda-4.jpg';
+import hifiFive from 'public/img/p/wadda/desktop-wadda-5.jpg';
+import cOne from 'public/img/p/wadda/components-wadda-1.jpg';
+import cTwo from 'public/img/p/wadda/components-wadda-2.jpg';
+import style from 'public/img/p/wadda/style-guide-wadda.jpg';
+import mockup from 'public/img/p/wadda/mockup-wadda.jpg';
+
+## Overview
+
+    Wadda is an MVP project dedicated to developing a user-friendly platform for digital invitation design services. The focus is on creating an intuitive UI/UX that enhances user experience, enabling seamless selection and ordering of digital invitations.
+
+### Role & Responsibility
+
+1. **UI/UX Designer**
+
+   - Conducted user research to inform design choices.
+   - Created a detailed sitemap and user flow.
+   - Designed wireframes low-fidelity for initial feedback.
+   - Developed high-fidelity visual designs.
+   - Created interactive prototypes for usability testing.
+
+2. **Front-End Web Developer**
+   - Slicing UI designs into code.
+   - Implemented responsive design using Astro.js and Bootstrap 5.
+
+### Tech Stack & Tools
+
+    - Astro Js
+    - Bootstrap 5 with custom CSS
+    - Figma
+    - VS Code
+    - GIT
+
+## Project Objectives
+
+    - Develop an intuitive, easy-to-navigate website.
+    - Showcase a diverse portfolio of attractive digital invitations.
+    - Streamline the ordering process for users.
+    - Enhance the professionalism and credibility of the service.
+
+## The Process
+
+1. ### Sitemap
+   Prioritizing content structure, the sitemap outlined the website’s organization, ensuring a clear and logical user experience.
+
+<figure>
+  <Picture src={sitemap} alt='sitemap' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>Sitemap - {frontmatter.name}</figcaption>
+</figure>
+
+2. ### User flow
+   Mapped user journeys to create an intuitive experience, guiding users seamlessly through their tasks.
+
+<figure>
+  <Picture src={userflow} alt='userflow' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Userflow - {frontmatter.name}
+  </figcaption>
+</figure>
+
+3. ### Low-Fidelity Design (Wireframe)
+   Utilized low-fidelity prototypes to assess usability and gather early user feedback, focusing on core layout and functionality.
+
+<figure>
+  <Picture src={wOne} alt='wireframe' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Wireframe (landing page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture src={wTwo} alt='wireframe' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Wireframe (theme & product detail page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture src={wThree} alt='wireframe' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Wireframe (contact, guest link & success page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture src={wFour} alt='wireframe' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Wireframe (form page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture src={wFive} alt='wireframe' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Wireframe (digital invitation) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+4. ### Style Guide
+   Created a comprehensive style guide to ensure brand consistency, detailing typography, color palette, and design principles.
+
+<figure>
+  <Picture src={style} alt='style guide' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    Style Guide - {frontmatter.name}
+  </figcaption>
+</figure>
+
+5. ### High-Fidelity Design
+   Developed a polished prototype that closely mimics the final design, including all visual elements and interactions.
 
 <figure>
   <Picture
@@ -36,3 +154,74 @@ import hifiOne from 'public/img/p/wadda/desktop-wadda-1.jpg';
     Hi-Fi (landing page) - {frontmatter.name}
   </figcaption>
 </figure>
+
+<figure>
+  <Picture
+    src={hifiTwo}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Hi-Fi (theme & product detail page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture
+    src={hifiThree}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Hi-Fi (contact, guest link & success page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture
+    src={hifiFour}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Hi-Fi (form page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture
+    src={hifiFive}
+    alt='high fidelity design'
+    formats={['avif', 'webp']}
+  />
+  <figcaption class='text-center'>
+    Hi-Fi (digital invitation page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+6. ### Components
+   Designed responsive UI components that adapt gracefully to all devices, enhancing usability across platforms.
+
+<figure>
+  <Picture src={cOne} alt='ui components' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    UI Components (main pages) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+<figure>
+  <Picture src={cTwo} alt='ui components' formats={['avif', 'webp']} />
+  <figcaption class='text-center'>
+    UI Components (digital invitation page) - {frontmatter.name}
+  </figcaption>
+</figure>
+
+## Conclution
+
+    The Wadda web design project exemplifies how effective UI/UX principles can enhance website usability and credibility. By utilizing the MVP methodology, we created a functional and engaging platform within a constrained timeline and resource framework.
+
+Visit the live <a href='https://wadda.me' target='_blank'>site here</a>
+
+<a href={frontmatter.siteLink} target='_blank'>
+  <Picture src={mockup} alt='mockup design' formats={['avif', 'webp']} />
+</a>
