@@ -1,7 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { Button } from '@/components/starwind/button';
-import { Icon } from 'astro-icon/components';
 
 const data = {
   title: 'About Me',
@@ -46,8 +45,8 @@ const links = [
   <main class='mt-auto'>
     <section id='About' class='py-24'>
       <div class='container mx-auto'>
-        <Button size='sm' variant='outline' href='/' class='mt-2'><Icon name='arrow-left' /> {data.cta}</Button>
-        <div class='mb-8 flex flex-col items-center justify-center gap-2'>
+        <Button size='sm' variant='outline' href='/' class='mt-2'>{data.cta}</Button>
+        <div class='my-8 flex flex-col items-center justify-center gap-2'>
           <h1 class='text-center text-3xl sm:text-6xl font-light'>
             {data.title}
           </h1>
@@ -71,7 +70,7 @@ const links = [
               size='sm'
               href={a.linkBio}
               class='mt-2'
-              target='_blank'>{a.textTwo} <Icon name='arrow-up-right' /></Button
+              target='_blank'>{a.textTwo}</Button
             >
           </div>
           <div
@@ -83,19 +82,19 @@ const links = [
                 size='sm'
                 href='https://x.com/kya_dev'
                 class='mt-2'
-                target='_blank'><Icon name='x' class='text-xl' /></Button
+                target='_blank'>X</Button
               >
               <Button
                 size='sm'
                 href='https://instagram.com/kya.devs'
                 class='mt-2'
-                target='_blank'><Icon name='ig' class='text-xl' /></Button
+                target='_blank'>IG</Button
               >
               <Button
                 size='sm'
                 href='https://threads.net/@kya.devs'
                 class='mt-2'
-                target='_blank'><Icon name='threads' class='text-xl' /></Button
+                target='_blank'>Threads</Button
               >
             </div>
           </div>
