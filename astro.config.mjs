@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
@@ -10,4 +10,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [mdx()],
+  experimental: {
+        fonts: [{
+            provider: fontProviders.google(),
+            name: "Outfit",
+            cssVariable: "--font-outfit",
+            weights: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+            styles: ["normal"],
+        }]
+    }
 });
