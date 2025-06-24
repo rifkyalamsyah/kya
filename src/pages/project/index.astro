@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { Button } from '@/components/starwind/button';
+import CardProject from '@components/card/CardProject.astro';
+import { Button } from '@components/starwind/button';
 import {
   Tabs,
   TabsList,
@@ -10,7 +11,6 @@ import {
 
 // content collections
 import { getCollection } from 'astro:content';
-import CardProject from '@/components/Card/CardProject.astro';
 // get all projects and sort by pubDate
 const posts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
