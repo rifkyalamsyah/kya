@@ -10,6 +10,7 @@ import {
 
 // content collections
 import { getCollection } from 'astro:content';
+import CardProject from '@/components/Card/CardProject.astro';
 // get all projects and sort by pubDate
 const posts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -27,8 +28,8 @@ const data = {
   <main class='mt-auto'>
     <section id='hero' class='py-24'>
       <div class='container mx-auto'>
-        <Button size='sm' variant='outline' href='/about' class='mt-2'
-          > {data.cta}</Button
+        <Button size='sm' variant='outline' href='/about' class='mt-2'>
+          {data.cta}</Button
         >
         <div class='mt-8 flex flex-col items-center justify-center gap-2'>
           <h1 class='text-center text-xl text-slate-600'>{data.subtitle}</h1>
@@ -49,41 +50,20 @@ const data = {
             <TabsTrigger value='all'>All</TabsTrigger>
             <TabsTrigger value='frontend'>Front-End</TabsTrigger>
             <TabsTrigger value='wordpress'>WordPress</TabsTrigger>
-            <TabsTrigger value='webflow'>Webflow</TabsTrigger>
+            <TabsTrigger value='webflow' disabled>Webflow</TabsTrigger>
           </TabsList>
           <TabsContent value='all'>
             <div class='mt-8 grid lg:grid-cols-2 lg:grid-rows-1 gap-4'>
               {
                 posts.map((post) => (
-                  <div class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-lg'>
-                    <a href={`/project/${post.id}`}>
-                      <img
-                        src={post.data.image}
-                        alt={post.data.title}
-                        class='w-full rounded-lg'
-                        width={1200}
-                        height={630}
-                        loading='eager'
-                      />
-                    </a>
-                    <h3 class='text-2xl'>{post.data.sortTitle}</h3>
-                    <p class='font-light line-clamp-2 text-slate-600'>
-                      {post.data.desc}
-                    </p>
-                    <div class='flex gap-2'>
-                      <Button size='sm' href={`/project/${post.id}`}>
-                        View Details
-                      </Button>
-                      <Button
-                        variant='outline'
-                        size='sm'
-                        href={post.data.siteLink}
-                        target={'_blank'}
-                      >
-                        Visit Site
-                      </Button>
-                    </div>
-                  </div>
+                  <CardProject
+                    href={`/project/${post.id}`}
+                    image={post.data.image}
+                    title={post.data.title}
+                    sortTitle={post.data.sortTitle}
+                    desc={post.data.desc}
+                    siteLink={post.data.siteLink}
+                  />
                 ))
               }
             </div>
@@ -94,35 +74,14 @@ const data = {
                 posts
                   .filter((post) => post.data.category === 'Frontend')
                   .map((post) => (
-                    <div class='w-full p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-lg'>
-                      <a href={`/project/${post.id}`}>
-                        <img
-                          src={post.data.image}
-                          alt={post.data.title}
-                          class='w-full rounded-lg'
-                          width={1200}
-                          height={630}
-                          loading='eager'
-                        />
-                      </a>
-                      <h3 class='text-2xl'>{post.data.sortTitle}</h3>
-                      <p class='font-light line-clamp-2 text-slate-600'>
-                        {post.data.desc}
-                      </p>
-                      <div class='flex gap-2'>
-                        <Button size='sm' href={`/project/${post.id}`}>
-                          View Details
-                        </Button>
-                        <Button
-                          variant='outline'
-                          size='sm'
-                          href={post.data.siteLink}
-                          target={'_blank'}
-                        >
-                          Visit Site 
-                        </Button>
-                      </div>
-                    </div>
+                    <CardProject
+                      href={`/project/${post.id}`}
+                      image={post.data.image}
+                      title={post.data.title}
+                      sortTitle={post.data.sortTitle}
+                      desc={post.data.desc}
+                      siteLink={post.data.siteLink}
+                    />
                   ))
               }
             </div>
@@ -133,41 +92,22 @@ const data = {
                 posts
                   .filter((post) => post.data.category === 'WordPress')
                   .map((post) => (
-                    <div class='w-full p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-lg'>
-                      <a href={`/project/${post.id}`}>
-                        <img
-                          src={post.data.image}
-                          alt={post.data.title}
-                          class='w-full rounded-lg'
-                          width={1200}
-                          height={630}
-                          loading='eager'
-                        />
-                      </a>
-                      <h3 class='text-2xl'>{post.data.sortTitle}</h3>
-                      <p class='font-light line-clamp-2 text-slate-600'>
-                        {post.data.desc}
-                      </p>
-                      <div class='flex gap-2'>
-                        <Button size='sm' href={`/project/${post.id}`}>
-                          View Details
-                        </Button>
-                        <Button
-                          variant='outline'
-                          size='sm'
-                          href={post.data.siteLink}
-                          target={'_blank'}
-                        >
-                          Visit Site 
-                        </Button>
-                      </div>
-                    </div>
+                    <CardProject
+                      href={`/project/${post.id}`}
+                      image={post.data.image}
+                      title={post.data.title}
+                      sortTitle={post.data.sortTitle}
+                      desc={post.data.desc}
+                      siteLink={post.data.siteLink}
+                    />
                   ))
               }
             </div>
           </TabsContent>
-          <TabsContent value='webflow'>
-            <h2 class='py-8 text-center text-4xl text-slate-400'>🚧 Coming soon! 🚧</h2>
+          <TabsContent value='webflow disabled'>
+            <h2 class='py-8 text-center text-4xl text-slate-400'>
+              🚧 Coming soon! 🚧
+            </h2>
           </TabsContent>
         </Tabs>
         <div></div>

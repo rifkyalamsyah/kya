@@ -1,0 +1,34 @@
+---
+import { Button } from '@/components/starwind/button';
+const { href, image, title, sortTitle, desc, siteLink  } = Astro.props;
+---
+
+<div
+  class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-lg'
+>
+  <a href={href}>
+    <img
+      src={image}
+      alt={title}
+      class='w-full rounded-lg'
+      width={1200}
+      height={630}
+      loading='eager'
+    />
+  </a>
+  <h3 class='text-2xl'>{sortTitle}</h3>
+  <p class='font-light line-clamp-2 text-slate-600'>
+    {desc}
+  </p>
+  <div class='flex gap-2'>
+    <Button size='sm' href={href}> View Details </Button>
+    <Button
+      variant='outline'
+      size='sm'
+      href={siteLink}
+      target={'_blank'}
+    >
+      Visit Site
+    </Button>
+  </div>
+</div>

@@ -11,13 +11,14 @@ const projects = defineCollection({
     title: z.string(),
     desc: z.string(),
     category: z.string(),
+    tags: z.array(z.string()).optional(),
     services: z.string(),
     year: z.string(),
     siteLink: z.string().optional(),
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    image: z.string().optional(),
+    image: z.string(),
   }),
 });
 

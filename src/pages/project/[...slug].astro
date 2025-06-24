@@ -17,18 +17,30 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'projects'>;
 const post = Astro.props;
 const { Content } = await render(post);
+
+// Format the last updated date
+const lastUpdated = post.data.updatedDate
+  ? new Date(post.data.updatedDate).toLocaleDateString('en-ID', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  : 'Unknown date';
 ---
 
 <Layout>
   <main>
     <div class='container mx-auto py-24'>
-      <div class="mb-8">
-        <Button size='sm' variant='outline' href='/project' class='mt-2'> Back</Button>
+      <div class='mb-8'>
+        <Button size='sm' variant='outline' href='/project' class='mt-2'>
+          Back</Button
+        >
       </div>
-      <article class="mx-auto prose prose-slate prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg prose-ol:my-4 prose-ul:my-4 prose-li:text-lg prose-li:font-light prose-hr:my-8 prose-figcaption:text-base">
+      <article
+        class='mx-auto prose prose-slate prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg prose-ol:my-4 prose-ul:my-4 prose-li:text-lg prose-li:font-light prose-hr:my-8 prose-figcaption:text-base'
+      >
         <h1>{post.data.title}</h1>
         <p>{post.data.desc}</p>
-        <!-- <Button size='sm'  href={post.data.siteLink} class='mt-2 text-center' target='_blank'>Visit Website</Button> -->
         <img
           src={post.data.image}
           alt={post.data.title}
@@ -37,7 +49,31 @@ const { Content } = await render(post);
           height={630}
           loading='eager'
         />
+        <div class='lg:pb-4 flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-4'>
+          <Button
+            size='sm'
+            href={post.data.siteLink}
+            class='text-center no-underline'
+            target='_blank'
+            style='text-decoration: none;'>Visit Website</Button
+          >
+          {
+            post.data.tags && (
+              <div class='mb-4 lg:mb-0 flex gap-2 flex-wrap'>
+                {(Array.isArray(post.data.tags)
+                  ? post.data.tags
+                  : [post.data.tags]
+                ).map((tag) => (
+                  <span class='text-sm py-[8px] px-4 bg-neutral-200 text-black rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </div>
         <Content />
+        <p class='text-sm'>Last updated on {lastUpdated}</p>
       </article>
     </div>
   </main>
