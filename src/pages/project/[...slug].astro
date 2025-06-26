@@ -43,7 +43,7 @@ const lastUpdated = post.data.updatedDate
         <p>{post.data.desc}</p>
         <img
           src={post.data.image}
-          alt={post.data.title}
+          alt={post.data.sortTitle}
           class='rounded-lg'
           width={1200}
           height={630}
@@ -53,7 +53,7 @@ const lastUpdated = post.data.updatedDate
           <Button
             size='sm'
             href={post.data.siteLink}
-            class='text-center no-underline'
+            class='text-center no-underline rounded-full'
             target='_blank'
             style='text-decoration: none;'>Visit Website</Button
           >
