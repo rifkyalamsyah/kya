@@ -11,106 +11,155 @@ import {
 
 // content collections
 import { getCollection } from 'astro:content';
-// get all projects and sort by pubDate
-const posts = (await getCollection('projects')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+// get all published projects and sort by pubDate
+const posts = (
+  await getCollection('projects', ({ data }) => data.draft !== true)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+// content
 const data = {
   subtitle: 'Projects',
   title: '🔮 Crafting Digital Experiences That Convert ✨',
   desc: "Websites that drive business growth. UI/UX, front-end dev, WordPress & modern frameworks. Let's elevate your online presence.",
   cta: 'Back',
 };
+
+const tabs = [
+  {
+    value: 'all',
+    label: 'All',
+  },
+  {
+    value: 'frontend',
+    label: 'Front-End',
+  },
+  {
+    value: 'wordpress',
+    label: 'WordPress',
+  },
+  {
+    value: 'webflow',
+    label: 'Webflow',
+  },
+];
 ---
 
 <Layout>
   <main class='mt-auto'>
     <section id='hero' class='py-24'>
       <div class='container mx-auto'>
-        <Button size='sm' variant='outline' href='/about' class='mt-2'>
+        <Button size='sm' variant='outline' href='/links' class='mt-2'>
           {data.cta}</Button
         >
         <div class='mt-8 flex flex-col items-center justify-center gap-2'>
-          <h1 class='text-center text-xl text-slate-600'>{data.subtitle}</h1>
+          <h1 class='text-center text-xl text-zinc-600'>{data.subtitle}</h1>
           <h2
             class='lg:max-w-[800px] text-center text-3xl sm:text-6xl font-light'
           >
             {data.title}
           </h2>
           <p
-            class='lg:max-w-[800px] text-center text-xl font-light text-slate-500 dark:text-slate-300'
+            class='lg:max-w-[800px] text-center text-xl font-light text-zinc-700 dark:text-zinc-300'
           >
             {data.desc}
           </p>
         </div>
-
-        <Tabs defaultValue='all' class='w-full mx-auto mt-12 flex flex-col'>
+        <Tabs
+          defaultValue={tabs[0].value}
+          class='w-full mx-auto mt-12 flex flex-col'
+        >
           <TabsList>
-            <TabsTrigger value='all'>All</TabsTrigger>
-            <TabsTrigger value='frontend'>Front-End</TabsTrigger>
-            <TabsTrigger value='wordpress'>WordPress</TabsTrigger>
-            <TabsTrigger value='webflow' disabled>Webflow</TabsTrigger>
+            <TabsTrigger value={tabs[0].value}>{tabs[0].label}</TabsTrigger>
+            <TabsTrigger value={tabs[1].value}>{tabs[1].label}</TabsTrigger>
+            <TabsTrigger value={tabs[2].value}>{tabs[2].label}</TabsTrigger>
+            <TabsTrigger value={tabs[3].value} disabled
+              >{tabs[3].label}</TabsTrigger
+            >
           </TabsList>
-          <TabsContent value='all'>
+          <TabsContent value={tabs[0].value}>
             <div class='mt-8 grid lg:grid-cols-2 lg:grid-rows-1 gap-4'>
               {
-                posts.map((post) => (
-                  <CardProject
-                    href={`/project/${post.id}`}
-                    image={post.data.image}
-                    title={post.data.sortTitle}
-                    sortTitle={post.data.sortTitle}
-                    desc={post.data.desc}
-                    siteLink={post.data.siteLink}
-                  />
-                ))
-              }
-            </div>
-          </TabsContent>
-          <TabsContent value='frontend'>
-            <div class='mt-8 grid lg:grid-cols-2 lg:grid-rows-1 gap-4'>
-              {
-                posts
-                  .filter((post) => post.data.category === 'Frontend')
-                  .map((post) => (
+                posts.length === 0 ? (
+                  <div class='col-span-2 text-center text-zinc-400 py-4'>
+                    Hey, there nothing here yet.
+                    <br />
+                    Stay tuned for cool projects coming soon!
+                  </div>
+                ) : (
+                  posts.map((post) => (
                     <CardProject
                       href={`/project/${post.id}`}
                       image={post.data.image}
-                      title={post.data.title}
+                      title={post.data.sortTitle}
                       sortTitle={post.data.sortTitle}
                       desc={post.data.desc}
                       siteLink={post.data.siteLink}
                     />
                   ))
+                )
               }
             </div>
           </TabsContent>
-          <TabsContent value='wordpress'>
+          <TabsContent value={tabs[1].value}>
             <div class='mt-8 grid lg:grid-cols-2 lg:grid-rows-1 gap-4'>
               {
-                posts
-                  .filter((post) => post.data.category === 'WordPress')
-                  .map((post) => (
-                    <CardProject
-                      href={`/project/${post.id}`}
-                      image={post.data.image}
-                      title={post.data.title}
-                      sortTitle={post.data.sortTitle}
-                      desc={post.data.desc}
-                      siteLink={post.data.siteLink}
-                    />
-                  ))
+                posts.filter((post) => post.data.category === 'Frontend')
+                  .length === 0 ? (
+                  <div class='col-span-2 text-center text-zinc-400 py-4'>
+                    Hey, there nothing here yet.
+                    <br />
+                    Stay tuned for cool projects coming soon!
+                  </div>
+                ) : (
+                  posts
+                    .filter((post) => post.data.category === 'Frontend')
+                    .map((post) => (
+                      <CardProject
+                        href={`/project/${post.id}`}
+                        image={post.data.image}
+                        title={post.data.title}
+                        sortTitle={post.data.sortTitle}
+                        desc={post.data.desc}
+                        siteLink={post.data.siteLink}
+                      />
+                    ))
+                )
               }
             </div>
           </TabsContent>
-          <TabsContent value='webflow disabled'>
-            <h2 class='py-8 text-center text-4xl text-slate-400'>
+          <TabsContent value={tabs[2].value}>
+            <div class='mt-8 grid lg:grid-cols-2 lg:grid-rows-1 gap-4'>
+              {
+                posts.filter((post) => post.data.category === 'WordPress')
+                  .length === 0 ? (
+                  <div class='col-span-2 text-center text-zinc-400 py-4'>
+                    Hey, there nothing here yet.
+                    <br />
+                    Stay tuned for cool projects coming soon!
+                  </div>
+                ) : (
+                  posts
+                    .filter((post) => post.data.category === 'WordPress')
+                    .map((post) => (
+                      <CardProject
+                        href={`/project/${post.id}`}
+                        image={post.data.image}
+                        title={post.data.title}
+                        sortTitle={post.data.sortTitle}
+                        desc={post.data.desc}
+                        siteLink={post.data.siteLink}
+                      />
+                    ))
+                )
+              }
+            </div>
+          </TabsContent>
+          <TabsContent value={tabs[3].value}>
+            <h2 class='py-8 text-center text-4xl text-zinc-400'>
               🚧 Coming soon! 🚧
             </h2>
           </TabsContent>
         </Tabs>
-        <div></div>
       </div>
     </section>
   </main>

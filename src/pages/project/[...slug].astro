@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { Button } from '@components/starwind/button';
+import { Picture } from 'astro:assets';
 
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { render } from 'astro:content';
@@ -8,10 +9,13 @@ import { render } from 'astro:content';
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection('projects');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: post,
-  }));
+  // Filter out drafts
+  return posts
+    .filter((post) => post.data.draft !== true)
+    .map((post) => ({
+      params: { slug: post.id },
+      props: post,
+    }));
 }
 
 type Props = CollectionEntry<'projects'>;
@@ -37,19 +41,20 @@ const lastUpdated = post.data.updatedDate
         >
       </div>
       <article
-        class='mx-auto prose prose-slate prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg prose-ol:my-4 prose-ul:my-4 prose-li:text-lg prose-li:font-light prose-hr:my-8 prose-figcaption:text-base'
+        class='mx-auto prose prose-zinc prose-headings:mb-2 prose-headings:font-medium prose-p:my-1 prose-p:font-light prose-p:text-lg prose-img:rounded-lg prose-ol:my-4 prose-ul:my-4 prose-li:text-lg prose-li:font-light prose-hr:my-8 prose-figcaption:text-base'
       >
         <h1>{post.data.title}</h1>
         <p>{post.data.desc}</p>
-        <img
+        <Picture
           src={post.data.image}
           alt={post.data.sortTitle}
           class='rounded-lg'
-          width={1200}
-          height={630}
           loading='eager'
+          formats={['avif', 'webp']}
         />
-        <div class='lg:pb-4 flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-4'>
+        <div
+          class='lg:pb-4 flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-4'
+        >
           <Button
             size='sm'
             href={post.data.siteLink}

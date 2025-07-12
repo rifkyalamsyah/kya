@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { Button } from '@components/starwind/button';
 
 const data = {
-  title: 'About Me',
+  title: 'My Links',
   desc: 'リフキ',
   cta: 'Back',
 };
@@ -15,7 +15,14 @@ const a = {
   text: 'Resume',
   resumeUrl: 'https://read.cv/rifkyalamsyah',
   textTwo: 'Links',
-  linkBio: 'https://zaap.bio/rifkyalamsyah',
+  linkBio: 'https://lynk.id/rifkyalamsyah',
+};
+
+// social media
+const social = {
+  x: ['https://x.com/kya_devs', 'x'],
+  ig: ['https://instagram.com/kya.devs', 'IG'],
+  threads: ['https://threads.com/@kya.devs', 'Theads'],
 };
 
 // links cards
@@ -51,7 +58,7 @@ const links = [
             {data.title}
           </h1>
           <p
-            class='text-center text-xl text-slate-500 dark:text-slate-300'
+            class='text-center text-xl text-zinc-700 dark:text-zinc-300'
           >
             {data.desc}
           </p>
@@ -59,7 +66,7 @@ const links = [
         <div class='grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-2 gap-4'>
           <div class='w-full lg:col-span-2 p-6 border border-gray-200 rounded-lg'>
             <h2 class='text-xl'>{a.name}</h2>
-            <p class='font-light text-lg text-slate-500 dark:text-slate-300'>
+            <p class='font-light text-lg text-zinc-700 dark:text-zinc-300'>
               {a.desc}
             </p>
             <Button size='sm' href={a.resumeUrl} class='mt-2' target='_blank'
@@ -80,27 +87,27 @@ const links = [
             <div class="flex flex-row gap-2">
               <Button
                 size='sm'
-                href='https://x.com/kya_devs'
+                href={social.x[0]}
                 class='mt-2'
-                target='_blank'>X</Button
+                target='_blank'>{social.x[1]}</Button
               >
               <Button
                 size='sm'
-                href='https://instagram.com/kya.devs'
+                href={social.ig[0]}
                 class='mt-2'
-                target='_blank'>IG</Button
+                target='_blank'>{social.ig[1]}</Button
               >
               <Button
                 size='sm'
-                href='https://threads.net/@kya.devs'
+                href={social.threads[0]}
                 class='mt-2'
-                target='_blank'>Threads</Button
+                target='_blank'>{social.threads[1]}</Button
               >
             </div>
           </div>
           <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
             <h2 class='text-xl'>{links[0].title}</h2>
-            <p class='font-light text-slate-500 dark:text-slate-300'>
+            <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[0].desc}
             </p>
             <Button size='sm' href={links[0].url} class='mt-2'
@@ -109,7 +116,7 @@ const links = [
           </div>
           <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
             <h2 class='text-xl'>{links[1].title}</h2>
-            <p class='font-light text-slate-500 dark:text-slate-300'>
+            <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[1].desc}
             </p>
             <Button size='sm' href={links[1].url} class='mt-2' target='_blank'
@@ -118,7 +125,7 @@ const links = [
           </div>
           <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
             <h2 class='text-xl'>{links[2].title}</h2>
-            <p class='font-light text-slate-500 dark:text-slate-300'>
+            <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[2].desc}
             </p>
             <Button size='sm' href={links[2].url} class='mt-2'

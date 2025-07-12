@@ -1,11 +1,12 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, type SchemaContext } from 'astro:content';
 
 const projects = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
   loader: glob({ base: './src/projects', pattern: '**/*.{md,mdx}' }),
   // Type-check frontmatter using a schema
-  schema: z.object({
+  schema: ({ image }) => z.object({
+    draft: z.boolean(),
     name: z.string(),
     sortTitle: z.string(),
     title: z.string(),
@@ -18,7 +19,7 @@ const projects = defineCollection({
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    image: z.string(),
+    image: image(),
   }),
 });
 
