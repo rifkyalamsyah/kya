@@ -1,5 +1,5 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z, type SchemaContext } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 
 const projects = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -17,9 +17,10 @@ const projects = defineCollection({
     year: z.string(),
     siteLink: z.string().optional(),
     // Transform string to Date object
+    ogImage: z.string().optional(),
+    image: image(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    image: image(),
   }),
 });
 

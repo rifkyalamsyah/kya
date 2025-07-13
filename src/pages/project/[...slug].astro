@@ -35,6 +35,9 @@ const lastUpdated = post.data.updatedDate
 <Layout
   title={post.data.sortTitle}
   desc={post.data.desc}
+  url={new URL(Astro.url.pathname, Astro.site)}
+  ogType='article'
+  ogImage={new URL(`${post.data.ogImage}`, Astro.site)}
 >
   <main>
     <div class='container mx-auto py-24'>

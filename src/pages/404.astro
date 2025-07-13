@@ -1,24 +1,30 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { Button } from "@components/starwind/button";
+import { Button } from '@components/starwind/button';
 
 const data = {
   title: 'Error 404',
   desc: 'Sorry, Page Not Found',
-  cta: 'Back to Home'
-}
+  cta: 'Back to Home',
+};
 ---
 
-<Layout>
-	<main class='mt-auto'>
-		<section id='hero'>
-			<div class='container mx-auto'>
-				<div class="h-screen flex flex-col items-center justify-center gap-2">
-					<h1 class='text-center text-3xl sm:text-5xl font-light'>{data.title}</h1>
-					<p class='text-center text-xl font-light text-zinc-700 dark:text-zinc-300'>{data.desc}</p>
-					<Button href='/' class='rounded-full mt-2'>{data.cta}</Button>
-				</div>
-			</div>
-		</section>
-	</main>
+<Layout title={data.title} desc={data.desc}>
+  <main class='mt-auto'>
+    <section id='hero'>
+      <div class='container mx-auto'>
+        <div class='h-screen flex flex-col items-center justify-center gap-2'>
+          <h1 class='text-center text-3xl sm:text-5xl font-light'>
+            {data.title}
+          </h1>
+          <p
+            class='text-center text-xl font-light text-zinc-700 dark:text-zinc-300'
+          >
+            {data.desc}
+          </p>
+          <Button href='/' class='rounded-full mt-2'>{data.cta}</Button>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
