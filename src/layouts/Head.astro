@@ -2,7 +2,7 @@
 import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
 const {title, desc, ogType='website', domain, url, ogImage} = Astro.props;
-const canonicalUrl = Astro.url;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <head>

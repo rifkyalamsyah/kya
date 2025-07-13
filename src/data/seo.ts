@@ -5,7 +5,7 @@ const data = {
 };
 
 export const HOME_PAGE_SEO = {
-  title: `${data.siteName} - UI Designer & Frontend Developer`,
+  title: `${data.siteName} - Web Designer / Frontend Developer`,
   desc: 'Discover Rifky Alamsyah portfolio, creative UI/UX design and frontend development for impactful digital experiences.',
   domain: data.domain,
   url: data.url,
