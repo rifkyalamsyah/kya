@@ -25,8 +25,13 @@ const data = {
   title: '🔮 Crafting Digital Experiences That Convert ✨',
   desc: "Websites that drive business growth. UI/UX, front-end dev, WordPress & modern frameworks. Let's elevate your online presence.",
   cta: 'Back',
+  emptyState: [
+    'Hey, there nothing here yet.',
+    ' Stay tuned for cool projects coming soon!',
+  ],
 };
 
+// tabs
 const tabs = [
   {
     value: 'all',
@@ -90,9 +95,9 @@ const tabs = [
               {
                 posts.length === 0 ? (
                   <div class='col-span-2 text-center text-zinc-400 py-4'>
-                    Hey, there nothing here yet.
+                    {data.emptyState[0]}
                     <br />
-                    Stay tuned for cool projects coming soon!
+                    {data.emptyState[1]}
                   </div>
                 ) : (
                   posts.map((post) => (
@@ -115,9 +120,9 @@ const tabs = [
                 posts.filter((post) => post.data.category === 'Frontend')
                   .length === 0 ? (
                   <div class='col-span-2 text-center text-zinc-400 py-4'>
-                    Hey, there nothing here yet.
+                    {data.emptyState[0]}
                     <br />
-                    Stay tuned for cool projects coming soon!
+                    {data.emptyState[1]}
                   </div>
                 ) : (
                   posts
@@ -142,9 +147,9 @@ const tabs = [
                 posts.filter((post) => post.data.category === 'WordPress')
                   .length === 0 ? (
                   <div class='col-span-2 text-center text-zinc-400 py-4'>
-                    Hey, there nothing here yet.
+                    {data.emptyState[0]}
                     <br />
-                    Stay tuned for cool projects coming soon!
+                    {data.emptyState[1]}
                   </div>
                 ) : (
                   posts
