@@ -2,6 +2,10 @@
 import Layout from '@layouts/Layout.astro';
 import { Button } from '@components/starwind/button';
 
+// seo
+import { LINKS_PAGE_SEO } from '@/data/seo';
+
+// content
 const data = {
   title: 'My Links',
   desc: 'リフキ',
@@ -48,24 +52,20 @@ const links = [
 ];
 ---
 
-<Layout>
+<Layout
+title={LINKS_PAGE_SEO.title}
+  desc={LINKS_PAGE_SEO.desc}
+  canonical={LINKS_PAGE_SEO.url}
+  domain={LINKS_PAGE_SEO.domain}
+  url={LINKS_PAGE_SEO.url}
+  ogImage={LINKS_PAGE_SEO.ogImage}>
   <main class='mt-auto'>
     <section id='About' class='py-24'>
       <div class='container mx-auto'>
         <Button size='sm' variant='outline' href='/' class='mt-2'>{data.cta}</Button>
-        <div class='my-8 flex flex-col items-center justify-center gap-2'>
-          <h1 class='text-center text-3xl sm:text-6xl font-light'>
-            {data.title}
-          </h1>
-          <p
-            class='text-center text-xl text-zinc-700 dark:text-zinc-300'
-          >
-            {data.desc}
-          </p>
-        </div>
-        <div class='grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-2 gap-4'>
+        <div class='my-8 grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-2 gap-4'>
           <div class='w-full lg:col-span-2 p-6 border border-gray-200 rounded-lg'>
-            <h2 class='text-xl'>{a.name}</h2>
+            <h1 class='text-xl'>{a.name}</h1>
             <p class='font-light text-lg text-zinc-700 dark:text-zinc-300'>
               {a.desc}
             </p>

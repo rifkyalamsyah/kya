@@ -2,11 +2,12 @@
 import '@styles/tailwind.css';
 import '@styles/starwind.css';
 import Head from './Head.astro';
+const {title, desc, ogType, domain, url, ogImage} = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
-  <Head title='Rifky Alamsyah' desc="UI Designer & Front-End Web Developer."/>
+  <Head title={title} desc={desc} ogType={ogType} domain={domain} url={url} ogImage={ogImage} />
   <body>
     <slot />
   </body>

@@ -1,15 +1,30 @@
 ---
 import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
-const {title, desc} = Astro.props;
+const {title, desc, ogType='website', domain, url, ogImage} = Astro.props;
+const canonicalUrl = Astro.url;
 ---
 
 <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel="canonical" href={canonicalUrl}>
     <title>{title}</title>
     <meta name='description' content={desc} />
+    <meta property="og:url" content={url}>
+    <meta property="og:type" content={ogType}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={desc}>
+    <meta property="og:image" content={ogImage}>
+    <meta property='og:image:secure_url' content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content={domain}>
+    <meta property="twitter:url" content={url}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={desc}>
+    <meta name="twitter:image" content={ogImage}>
+
     <Font cssVariable="--font-outfit" preload />
     <ClientRouter />
 </head>

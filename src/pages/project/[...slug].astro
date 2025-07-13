@@ -32,7 +32,10 @@ const lastUpdated = post.data.updatedDate
   : 'Unknown date';
 ---
 
-<Layout>
+<Layout
+  title={post.data.sortTitle}
+  desc={post.data.desc}
+>
   <main>
     <div class='container mx-auto py-24'>
       <div class='mb-8'>

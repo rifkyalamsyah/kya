@@ -9,6 +9,9 @@ import {
   TabsContent,
 } from '@/components/starwind/tabs';
 
+// seo
+import { PROJECT_PAGE_SEO } from '@/data/seo';
+
 // content collections
 import { getCollection } from 'astro:content';
 // get all published projects and sort by pubDate
@@ -44,7 +47,13 @@ const tabs = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={PROJECT_PAGE_SEO.title}
+  desc={PROJECT_PAGE_SEO.desc}
+  domain={PROJECT_PAGE_SEO.domain}
+  url={PROJECT_PAGE_SEO.url}
+  ogImage={PROJECT_PAGE_SEO.ogImage}
+>
   <main class='mt-auto'>
     <section id='hero' class='py-24'>
       <div class='container mx-auto'>
