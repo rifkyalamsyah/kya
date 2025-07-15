@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @utility container {
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 
   @variant sm {
     padding-inline: 1.5rem;

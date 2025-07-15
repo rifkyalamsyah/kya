@@ -19,52 +19,60 @@ const a = {
   text: 'Resume',
   resumeUrl: 'https://read.cv/rifkyalamsyah',
   textTwo: 'Links',
-  linkBio: 'https://lynk.id/rifkyalamsyah',
+  linkBio: 'https://lynk.id/rifkyalamsyah'
 };
 
 // social media
 const social = {
-  x: ['https://x.com/kya_devs', 'x'],
-  ig: ['https://instagram.com/kya.devs', 'IG'],
-  threads: ['https://threads.com/@kya.devs', 'Theads'],
+  title: 'Social Media',
+  x: { text: 'X', url: 'https://x.com/kya_devs' },
+  ig: { text: 'IG', url: 'https://instagram.com/kya.devs' },
+  threads: { text: 'Threads', url: 'https://threads.com/@kya.devs' },
 };
 
 // links cards
 const links = [
-  {
-    title: 'Projects',
-    desc: 'Discover my portfolio.',
-    textBtn: 'See Portfolio',
-    url: '/project',
-  },
-  {
-    title: 'Shop',
-    desc: 'Check out 3D Icons / Illustrations.',
-    textBtn: 'Discover',
-    url: 'http://rifkya.gumroad.com/',
-  },
-  {
-    title: 'Blog',
-    desc: 'Read my insightful articles.',
-    textBtn: 'Read Article',
-    url: '/blog',
-  },
-];
+	{
+		title: 'Projects',
+		desc: 'Discover my portfolio.',
+		textBtn: 'See Portfolio',
+		url: '/project',
+	},
+	{
+		title: 'Shop',
+		desc: 'Check out 3D Icons / Illustrations.',
+		textBtn: 'Discover',
+		url: 'http://rifkya.gumroad.com/',
+	},
+	{
+		title: 'Blog',
+		desc: 'Read my insightful articles.',
+		textBtn: 'Read Article',
+		url: '/blog',
+	},
+]
 ---
 
 <Layout
-title={LINKS_PAGE_SEO.title}
+  title={LINKS_PAGE_SEO.title}
   desc={LINKS_PAGE_SEO.desc}
   canonical={LINKS_PAGE_SEO.url}
   domain={LINKS_PAGE_SEO.domain}
   url={LINKS_PAGE_SEO.url}
-  ogImage={LINKS_PAGE_SEO.ogImage}>
+  ogImage={LINKS_PAGE_SEO.ogImage}
+>
   <main class='mt-auto'>
-    <section id='About' class='py-24'>
-      <div class='container mx-auto'>
-        <Button size='sm' variant='outline' href='/' class='mt-2'>{data.cta}</Button>
-        <div class='my-8 grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-2 gap-4'>
-          <div class='w-full lg:col-span-2 p-6 border border-gray-200 rounded-lg'>
+    <section id='About' class='py-24 px-6'>
+      <div class='max-w-[1440px] mx-auto'>
+        <Button size='sm' variant='outline' href='/'
+          >{data.cta}</Button
+        >
+        <div
+          class='my-8 grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-2 gap-4'
+        >
+          <div
+            class='w-full lg:col-span-2 p-6 border border-gray-200 rounded-lg'
+          >
             <h1 class='text-xl'>{a.name}</h1>
             <p class='font-light text-lg text-zinc-700 dark:text-zinc-300'>
               {a.desc}
@@ -83,29 +91,28 @@ title={LINKS_PAGE_SEO.title}
           <div
             class='w-full lg:col-start-3 p-6 border border-gray-200 rounded-lg flex flex-col justify-end gap-2'
           >
-            <h2 class='text-xl'>Social Media</h2>
-            <div class="flex flex-row gap-2">
-              <Button
-                size='sm'
-                href={social.x[0]}
-                class='mt-2'
-                target='_blank'>{social.x[1]}</Button
+            <h2 class='text-xl'>{social.title}</h2>
+            <div class='flex flex-row gap-2'>
+              <Button size='sm' href={social.x.url} class='mt-2' target='_blank'
+                >{social.x.text}</Button
               >
               <Button
                 size='sm'
-                href={social.ig[0]}
+                href={social.ig.url}
                 class='mt-2'
-                target='_blank'>{social.ig[1]}</Button
+                target='_blank'>{social.ig.text}</Button
               >
               <Button
                 size='sm'
-                href={social.threads[0]}
+                href={social.threads.url}
                 class='mt-2'
-                target='_blank'>{social.threads[1]}</Button
+                target='_blank'>{social.threads.text}</Button
               >
             </div>
           </div>
-          <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
+          <div
+            class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'
+          >
             <h2 class='text-xl'>{links[0].title}</h2>
             <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[0].desc}
@@ -114,7 +121,9 @@ title={LINKS_PAGE_SEO.title}
               >{links[0].textBtn}</Button
             >
           </div>
-          <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
+          <div
+            class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'
+          >
             <h2 class='text-xl'>{links[1].title}</h2>
             <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[1].desc}
@@ -123,7 +132,9 @@ title={LINKS_PAGE_SEO.title}
               >{links[1].textBtn}</Button
             >
           </div>
-          <div class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'>
+          <div
+            class='w-full lg:row-start-2 p-6 border border-gray-200 rounded-lg'
+          >
             <h2 class='text-xl'>{links[2].title}</h2>
             <p class='font-light text-zinc-700 dark:text-zinc-300'>
               {links[2].desc}

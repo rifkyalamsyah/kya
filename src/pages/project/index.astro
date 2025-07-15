@@ -24,7 +24,7 @@ const data = {
   subtitle: 'Projects',
   title: '🔮 Crafting Digital Experiences That Convert ✨',
   desc: "Websites that drive business growth. UI/UX, front-end dev, WordPress & modern frameworks. Let's elevate your online presence.",
-  cta: 'Back',
+  backButtonText: 'Back',
   emptyState: [
     'Hey, there nothing here yet.',
     ' Stay tuned for cool projects coming soon!',
@@ -60,10 +60,10 @@ const tabs = [
   ogImage={PROJECT_PAGE_SEO.ogImage}
 >
   <main class='mt-auto'>
-    <section id='hero' class='py-24'>
-      <div class='container mx-auto'>
-        <Button size='sm' variant='outline' href='/links' class='mt-2'>
-          {data.cta}</Button
+    <section id='hero' class='py-24 px-6'>
+      <div class='max-w-[1440px] mx-auto'>
+        <Button size='sm' variant='outline' href='/links'>
+          {data.backButtonText}</Button
         >
         <div class='mt-8 flex flex-col items-center justify-center gap-2'>
           <h1 class='text-center text-xl text-zinc-600'>{data.subtitle}</h1>
