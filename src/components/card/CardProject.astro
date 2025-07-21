@@ -5,13 +5,13 @@ const { href, image, title, sortTitle, desc, siteLink  } = Astro.props;
 ---
 
 <div
-  class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-lg'
+  class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-2xl bg-white'
 >
   <a href={href}>
     <Picture
       src={image}
       alt={title}
-      class='w-full rounded-lg'
+      class='w-full rounded-xl'
       formats={['avif', 'webp']}
     />
   </a>

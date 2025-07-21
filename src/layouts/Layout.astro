@@ -2,14 +2,26 @@
 import '@styles/tailwind.css';
 import '@styles/starwind.css';
 import Head from './Head.astro';
-const {title, desc, ogType, domain, url, ogImage} = Astro.props;
+import Header from '@/components/header/Header.astro';
+import Footer from '@/components/footer/Footer.astro';
+
+const { title, desc, ogType, domain, url, ogImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
-  <Head title={title} desc={desc} ogType={ogType} domain={domain} url={url} ogImage={ogImage} />
+  <Head
+    title={title}
+    desc={desc}
+    ogType={ogType}
+    domain={domain}
+    url={url}
+    ogImage={ogImage}
+  />
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
