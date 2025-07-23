@@ -24,9 +24,8 @@ updatedDate: 2024-11-03
 
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/mully/desktop-mully.jpg';
-
 
 ## Overview
 
@@ -51,14 +50,8 @@ import landingPage from './img/mully/desktop-mully.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Landing Page - {frontmatter.name}
-  </figcaption>
+  <Image src={landingPage} alt='high fidelity design' />
+  <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 Design inspired by <a href='https://dribbble.com/shots/24218487-Mully-Bank-Website-Transforming-Banking-for-the-Digital-Age' target='_blank'>Dribbble shots</a> for SlabPixel.

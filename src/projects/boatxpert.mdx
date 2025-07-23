@@ -16,7 +16,7 @@ pubDate: 2025-01-22
 updatedDate: 2025-03-23
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/boatxpert/desktop-boatxpert.jpg';
 import styleGuide from './img/boatxpert/desktop-boatxpert-style-guide.jpg';
 
@@ -27,6 +27,7 @@ import styleGuide from './img/boatxpert/desktop-boatxpert-style-guide.jpg';
 **Scope:** {frontmatter.services}
 
 ---
+
 ## Overview
 
     BoatXpert is a WordPress development project aimed at creating a professional website for a boat repair and maintenance service. The goal was to design an Elementor template kit tailored to showcase the services, expertise, and reliability of the business while providing users with an easy way to book services or request quotes online.
@@ -44,25 +45,13 @@ import styleGuide from './img/boatxpert/desktop-boatxpert-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Landing Page - {frontmatter.name}
-  </figcaption>
+  <Image src={landingPage} alt='high fidelity design' />
+  <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Style Guide - {frontmatter.name}
-  </figcaption>
+  <Image src={styleGuide} alt='high fidelity design' />
+  <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 
 ### Teams

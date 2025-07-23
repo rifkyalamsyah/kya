@@ -16,7 +16,7 @@ pubDate: 2025-02-13
 updatedDate: 2025-03-23
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/buildpro/desktop-buildpro.jpg';
 import styleGuide from './img/buildpro/desktop-buildpro-style-guide.jpg';
 
@@ -45,25 +45,13 @@ import styleGuide from './img/buildpro/desktop-buildpro-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Landing Page - {frontmatter.name}
-  </figcaption>
+  <Image src={landingPage} alt='high fidelity design' />
+  <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Style Guide - {frontmatter.name}
-  </figcaption>
+  <Image src={styleGuide} alt='high fidelity design' />
+  <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 
 ### Teams

@@ -16,7 +16,7 @@ pubDate: 2024-08-26
 updatedDate: 2025-03-23
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/wealthpath/desktop-wealthpath.jpg';
 import styleGuide from './img/wealthpath/desktop-wealthpath-style-guide.jpg';
 
@@ -32,7 +32,6 @@ import styleGuide from './img/wealthpath/desktop-wealthpath-style-guide.jpg';
 
     The WealthPath project was designed to create a sophisticated and user-friendly WordPress site for a personal financial planner. Utilizing Elementor, the objective was to develop a template kit that caters to users seeking comprehensive financial planning tools and services.
 
-
 ### Tech Stack & Tools
 
     - Wordpress
@@ -42,25 +41,13 @@ import styleGuide from './img/wealthpath/desktop-wealthpath-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Landing Page - {frontmatter.name}
-  </figcaption>
+  <Image src={landingPage} alt='high fidelity design' />
+  <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Style Guide - {frontmatter.name}
-  </figcaption>
+  <Image src={styleGuide} alt='high fidelity design' />
+  <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 
 ### Teams

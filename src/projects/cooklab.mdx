@@ -16,7 +16,7 @@ pubDate: 2024-09-30
 updatedDate: 2025-03-23
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/cooklab/desktop-cooklab.jpg';
 import styleGuide from './img/cooklab/desktop-cooklab-style-guide.jpg';
 
@@ -27,7 +27,6 @@ import styleGuide from './img/cooklab/desktop-cooklab-style-guide.jpg';
 **Scope:** {frontmatter.services}
 
 ---
-
 
 ## Overview
 
@@ -46,25 +45,13 @@ import styleGuide from './img/cooklab/desktop-cooklab-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Landing Page - {frontmatter.name}
-  </figcaption>
+  <Image src={landingPage} alt='high fidelity design' />
+  <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
-  <figcaption class='text-center'>
-    Style Guide - {frontmatter.name}
-  </figcaption>
+  <Image src={styleGuide} alt='high fidelity design' />
+  <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 
 ### Teams
@@ -74,4 +61,4 @@ import styleGuide from './img/cooklab/desktop-cooklab-style-guide.jpg';
     - Hendy Riswanto - _QA Engineer_
     - Dwijoko - _Web designer_
 
---- 
+---

@@ -16,7 +16,7 @@ pubDate: 2025-06-2T09:30:00
 updatedDate: 2025-06-26T15:30:00
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/financecoach/desktop-financecoach.jpg';
 import styleGuide from './img/financecoach/desktop-financecoach-style-guide.jpg';
 
@@ -45,28 +45,19 @@ import styleGuide from './img/financecoach/desktop-financecoach-style-guide.jpg'
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={landingPage} alt='high fidelity design' />
   <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={styleGuide} alt='high fidelity design' />
   <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
-
-
 
 ### Teams
 
     - Faiz Hakim - _Head of Design_
     - Rifky Alamsyah - _Web designer_
     - Hendy Riswanto - _QA Engineer_
+
 ---

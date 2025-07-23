@@ -16,7 +16,7 @@ pubDate: 2025-04-21
 updatedDate: 2025-06-26
 ---
 
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import landingPage from './img/greenfarms/desktop-greenfarms.jpg';
 import styleGuide from './img/greenfarms/desktop-greenfarms-style-guide.jpg';
 
@@ -46,28 +46,19 @@ import styleGuide from './img/greenfarms/desktop-greenfarms-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Picture
-    src={landingPage}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={landingPage} alt='high fidelity design' />
   <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={styleGuide}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={styleGuide} alt='high fidelity design' />
   <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
-
-
 
 ### Teams
 
     - Faiz Hakim - _Head of Design_
     - Rifky Alamsyah - _Web designer_
     - Hendy Riswanto - _QA Engineer_
+
 ---

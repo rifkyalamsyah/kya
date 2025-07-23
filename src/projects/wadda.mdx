@@ -24,8 +24,7 @@ updatedDate: 2025-03-23
 
 ---
 
-
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import sitemap from './img/wadda/sitemap-wadda.jpg';
 import userflow from './img/wadda/userflow-wadda.jpg';
 import wOne from './img/wadda/wireframe-wadda-1.jpg';
@@ -82,7 +81,7 @@ import mockup from './img/wadda/mockup-wadda.jpg';
    Prioritizing content structure, the sitemap outlined the website’s organization, ensuring a clear and logical user experience.
 
 <figure>
-  <Picture src={sitemap} alt='sitemap' formats={['avif', 'webp']} />
+  <Image src={sitemap} alt='sitemap' />
   <figcaption class='text-center'>Sitemap - {frontmatter.name}</figcaption>
 </figure>
 
@@ -90,45 +89,43 @@ import mockup from './img/wadda/mockup-wadda.jpg';
    Mapped user journeys to create an intuitive experience, guiding users seamlessly through their tasks.
 
 <figure>
-  <Picture src={userflow} alt='userflow' formats={['avif', 'webp']} />
-  <figcaption class='text-center'>
-    Userflow - {frontmatter.name}
-  </figcaption>
+  <Image src={userflow} alt='userflow' />
+  <figcaption class='text-center'>Userflow - {frontmatter.name}</figcaption>
 </figure>
 
 3. ### Low-Fidelity Design (Wireframe)
    Utilized low-fidelity prototypes to assess usability and gather early user feedback, focusing on core layout and functionality.
 
 <figure>
-  <Picture src={wOne} alt='wireframe' formats={['avif', 'webp']} />
+  <Image src={wOne} alt='wireframe' />
   <figcaption class='text-center'>
     Wireframe (landing page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture src={wTwo} alt='wireframe' formats={['avif', 'webp']} />
+  <Image src={wTwo} alt='wireframe' />
   <figcaption class='text-center'>
     Wireframe (theme & product detail page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture src={wThree} alt='wireframe' formats={['avif', 'webp']} />
+  <Image src={wThree} alt='wireframe' />
   <figcaption class='text-center'>
     Wireframe (contact, guest link & success page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture src={wFour} alt='wireframe' formats={['avif', 'webp']} />
+  <Image src={wFour} alt='wireframe' />
   <figcaption class='text-center'>
     Wireframe (form page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture src={wFive} alt='wireframe' formats={['avif', 'webp']} />
+  <Image src={wFive} alt='wireframe' />
   <figcaption class='text-center'>
     Wireframe (digital invitation) - {frontmatter.name}
   </figcaption>
@@ -138,65 +135,43 @@ import mockup from './img/wadda/mockup-wadda.jpg';
    Created a comprehensive style guide to ensure brand consistency, detailing typography, color palette, and design principles.
 
 <figure>
-  <Picture src={style} alt='style guide' formats={['avif', 'webp']} />
-  <figcaption class='text-center'>
-    Style Guide - {frontmatter.name}
-  </figcaption>
+  <Image src={style} alt='style guide' />
+  <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 
 5. ### High-Fidelity Design
    Developed a polished prototype that closely mimics the final design, including all visual elements and interactions.
 
 <figure>
-  <Picture
-    src={hifiOne}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={hifiOne} alt='high fidelity design' />
   <figcaption class='text-center'>
     Hi-Fi (landing page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={hifiTwo}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={hifiTwo} alt='high fidelity design' />
   <figcaption class='text-center'>
     Hi-Fi (theme & product detail page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={hifiThree}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={hifiThree} alt='high fidelity design' />
   <figcaption class='text-center'>
     Hi-Fi (contact, guest link & success page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={hifiFour}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={hifiFour} alt='high fidelity design' />
   <figcaption class='text-center'>
     Hi-Fi (form page) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture
-    src={hifiFive}
-    alt='high fidelity design'
-    formats={['avif', 'webp']}
-  />
+  <Image src={hifiFive} alt='high fidelity design' />
   <figcaption class='text-center'>
     Hi-Fi (digital invitation page) - {frontmatter.name}
   </figcaption>
@@ -206,14 +181,14 @@ import mockup from './img/wadda/mockup-wadda.jpg';
    Designed responsive UI components that adapt gracefully to all devices, enhancing usability across platforms.
 
 <figure>
-  <Picture src={cOne} alt='ui components' formats={['avif', 'webp']} />
+  <Image src={cOne} alt='ui components' />
   <figcaption class='text-center'>
     UI Components (main pages) - {frontmatter.name}
   </figcaption>
 </figure>
 
 <figure>
-  <Picture src={cTwo} alt='ui components' formats={['avif', 'webp']} />
+  <Image src={cTwo} alt='ui components' />
   <figcaption class='text-center'>
     UI Components (digital invitation page) - {frontmatter.name}
   </figcaption>
@@ -226,7 +201,7 @@ import mockup from './img/wadda/mockup-wadda.jpg';
 Visit the live <a href='https://wadda.me' target='_blank'>site here</a>
 
 <a href={frontmatter.siteLink} target='_blank'>
-  <Picture src={mockup} alt='mockup design' formats={['avif', 'webp']} />
+  <Image src={mockup} alt='mockup design' />
 </a>
 
 ---
