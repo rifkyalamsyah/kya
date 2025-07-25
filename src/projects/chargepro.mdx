@@ -16,7 +16,7 @@ pubDate: 2025-04-29
 updatedDate: 2025-06-26
 ---
 
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import landingPage from './img/chargepro/desktop-chargepro.jpg';
 import styleGuide from './img/chargepro/desktop-chargepro-style-guide.jpg';
 
@@ -45,12 +45,12 @@ import styleGuide from './img/chargepro/desktop-chargepro-style-guide.jpg';
 ### Outcome
 
 <figure>
-  <Image src={landingPage} alt='high fidelity design' />
+  <Picture src={landingPage} alt='high fidelity design' formats={['avif', 'webp']} />
   <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 
 <figure>
-  <Image src={styleGuide} alt='high fidelity design' />
+  <Picture src={styleGuide} alt='high fidelity design' formats={['avif', 'webp']} />
   <figcaption class='text-center'>Style Guide - {frontmatter.name}</figcaption>
 </figure>
 

@@ -24,7 +24,7 @@ updatedDate: 2024-11-03
 
 ---
 
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import landingPage from './img/mully/desktop-mully.jpg';
 
 ## Overview
@@ -50,7 +50,7 @@ import landingPage from './img/mully/desktop-mully.jpg';
 ### Outcome
 
 <figure>
-  <Image src={landingPage} alt='high fidelity design' />
+  <Picture src={landingPage} alt='high fidelity design' formats={['avif', 'webp']} />
   <figcaption class='text-center'>Landing Page - {frontmatter.name}</figcaption>
 </figure>
 

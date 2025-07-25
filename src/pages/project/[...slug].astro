@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { Button } from '@components/starwind/button';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { render } from 'astro:content';
@@ -48,11 +48,12 @@ const lastUpdated = post.data.updatedDate
       >
         <h1>{post.data.title}</h1>
         <p>{post.data.desc}</p>
-        <Image
+        <Picture
           src={post.data.image}
           alt={post.data.sortTitle}
           class='rounded-xl'
           loading='eager'
+          formats={['avif', 'webp']}
         />
         <div
           class='lg:pb-4 flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-4'
