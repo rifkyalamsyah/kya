@@ -1,11 +1,11 @@
 ---
 import { Picture } from 'astro:assets';
 import { Button } from '@components/starwind/button';
-const { href, image, title, sortTitle, desc, siteLink  } = Astro.props;
+const { href, image, title, sortTitle, desc, siteLink } = Astro.props;
 ---
 
 <div
-  class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-gray-200 rounded-2xl bg-white'
+  class='w-full p-4 lg:p-6 flex flex-col justify-center gap-3 border border-transparent hover:border-gray-200 rounded-2xl bg-white'
 >
   <a href={href}>
     <Picture
@@ -21,12 +21,7 @@ const { href, image, title, sortTitle, desc, siteLink  } = Astro.props;
   </p>
   <div class='flex gap-2'>
     <Button size='sm' href={href}>View Details</Button>
-    <Button
-      variant='outline'
-      size='sm'
-      href={siteLink}
-      target={'_blank'}
-    >
+    <Button variant='outline' size='sm' href={siteLink} target={'_blank'}>
       Visit Site
     </Button>
   </div>
